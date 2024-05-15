@@ -5,7 +5,7 @@ let renderCounter=0;
 // change these three lines as appropiate
 let sourceFile = "input_4.jpg";
 let maskFile   = "mask_4.png";
-let outputFile = "output_4.png";
+let outputFile = "output_.png";
 
 function preload() {
   sourceImg = loadImage(sourceFile);
