@@ -31,7 +31,7 @@ function draw () {
     let mask = maskImg.get(x, y);
     fill(pix);
     if(mask[0] > 128) {
-      let pointSize = 10;
+      let pointSize = 15;
       ellipse(x, y, pointSize, pointSize);
     }
     else {
