@@ -97,7 +97,7 @@ function draw () {
       }
       else {
         if(j%2 == 0) {
-          pix = [255, 255, 0, 255]
+          pix = [255, 175, 0, 255]
         }
         else {
           pix = sourceImg.get(i, j);          
