@@ -3,9 +3,9 @@ let maskImg=null;
 
 
 // change these three lines as appropiate
-let sourceFile = "input_7.jpg";
-let maskFile   = "mask_7.png";
-let outputFile = "output_6.png";
+let sourceFile = "input_4.jpg";
+let maskFile   = "mask_4.png";
+let outputFile = "output_4.png";
 let maskCenter = null;
 let maskCenterSize = null;
 
@@ -107,21 +107,31 @@ function draw () {
       set(i, j, pix);
     }
   }
+  for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
+    for(let i=0; i<X_STOP; i++) {
+      colorMode(RGB);
+      let mask = maskImg.get(i, j);
+      if (mask[1] < 128) {
+        pix = sourceImg.get(i, j);
+      }
+      else {
+        let wave = sin(j*4);
+        let slip = map(wave, -1, 1, -OFFSET, OFFSET);
+        pix = sourceImg.get(i+slip, j);
+
+        // let brt = map(wave, -1, 1, 0, 255);
+        // for(let c=0; c<3; c++) {
+        //   pix[c] = brt;
+        // }
+      }
+
+      set(i, j, pix);
+    }
+  }
+  
   renderCounter = renderCounter + num_lines_to_draw;
   updatePixels();
 
-  if (maskCenter !== null) {
-    strokeWeight(5);
-    fill(0, 255, 0);
-    stroke(255, 0, 0);
-    ellipse(maskCenter[0], maskCenter[1], 100);
-    line(maskCenter[0]-200, maskCenter[1], maskCenter[0]+200, maskCenter[1]);
-    line(maskCenter[0], maskCenter[1]-200, maskCenter[0], maskCenter[1]+200);
-    noFill();
-    let mcw = maskCenterSize[0];
-    let mch = maskCenterSize[1];
-    rect(maskCenter[0]-mcw/2, maskCenter[1]-mch/2, mcw, mch);
-  }
 
   // print(renderCounter);
   if(renderCounter > Y_STOP) {
