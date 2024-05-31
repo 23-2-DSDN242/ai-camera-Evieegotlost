@@ -6,10 +6,9 @@
 _____________________________________________________________________________________________________
 
 Mid-way through the project, I realized it would be difficult to replicate the style accurately due to the given parameter limit. Since I was using bezier vertex shapes to create the ink strokes, I would have to use a larger amount of parameters if I wanted to replicate the varying bends. 
-![image1](img1.jpg)
-![image2](img2.jpg)
-Because of this, I had to cut down the amount of shapes I'm using as well as any extra vertices. This leaves 3 main shapes each with 8 parameters.
-![image3](sketch.jpg)
-I couldn't quite work out how to get the blur filter working the way I wanted it to and since I was running out of time I decided to not include the idea.
-![image4](Alphabet.jpg)
-I didn't have much of a plan in mind for each character but I tried sticking to varying positions of each shape as well as keeping the overall font mostly readable.
+![image1](input_3.jpg)
+![image2](mask_3.png)
+![image2](output_3.png)
+![image1](input_6.jpg)
+![image2](mask_6.png)
+![image2](output_6.png)
